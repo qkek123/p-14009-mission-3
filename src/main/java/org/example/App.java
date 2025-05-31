@@ -14,6 +14,8 @@ public class App {
             if (cmd.equals("종료")) {
                 sc.close();
                 break;
+            } else if (cmd.equals("등록")) {
+                WiseSayingAction.register(sc);
             }
         }
     }
