@@ -9,7 +9,6 @@ public class WiseSayingService {
     static int count = 0;
 
     public static int write(String wiseSaying, String author) {
-        //구현 완료
         count++;
 
         WiseSaying wisesaying = new WiseSaying(count, wiseSaying, author);

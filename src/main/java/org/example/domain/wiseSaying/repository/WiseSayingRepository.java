@@ -2,6 +2,9 @@ package org.example.domain.wiseSaying.repository;
 
 import org.example.domain.wiseSaying.entity.WiseSaying;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -18,11 +21,14 @@ public class WiseSayingRepository {
     }
 
     public static void post(WiseSaying wiseSaying, int id) {
+
         String[] arr = new String[3];
 
         arr[0] = String.valueOf(wiseSaying.getCount());
         arr[1] = wiseSaying.getWiseSaying();
         arr[2] = wiseSaying.getAuthor();
+
+        wiseSaying.save(wiseSaying.getCount(), wiseSaying);
 
         if (id == 0) {
             list.add(arr);
