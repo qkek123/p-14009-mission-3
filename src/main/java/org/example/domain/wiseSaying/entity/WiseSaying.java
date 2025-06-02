@@ -38,17 +38,9 @@ public class WiseSaying{
         return author;
     }
 
-    public void save(int id, WiseSaying wiseSaying) {
-        String fileName = "db/wiseSaying/"+(id)+".json";
+    public static void save(String content) {
+        String fileName = "db/wiseSaying/data.json";
         new File("db/wiseSaying").mkdirs();
-
-        String content = String.format("""
-                {
-                    "id": %d,
-                    "content": "%s",
-                    "author": "%s"
-                }
-                """, id, wiseSaying.getWiseSaying(), wiseSaying.getAuthor());
 
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(fileName, false))) {
             bw.write(content);

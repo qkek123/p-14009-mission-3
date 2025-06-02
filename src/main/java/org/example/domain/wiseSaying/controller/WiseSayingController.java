@@ -24,8 +24,14 @@ public class WiseSayingController {
             case "목록" -> actionList();
             case "삭제" -> actionDelete(rq.getIdName());
             case "수정" -> actionModify(rq.getIdName());
+            case "빌드" -> actionBuild();
         }
 
+    }
+
+    private void actionBuild() {
+        WiseSayingService.build();
+        System.out.println("data.json 파일의 내용이 갱신되었습니다.");
     }
 
     private void actionModify(int id) {
@@ -56,6 +62,7 @@ public class WiseSayingController {
             System.out.printf("%d번 명언은 존재하지 않습니다.\n", id);
         } else {
             WiseSayingService.delete(id);
+            System.out.printf("%d번 명언이 삭제되었습니다.\n", id);
         }
 
     }

@@ -28,8 +28,6 @@ public class WiseSayingRepository {
         arr[1] = wiseSaying.getWiseSaying();
         arr[2] = wiseSaying.getAuthor();
 
-        wiseSaying.save(wiseSaying.getCount(), wiseSaying);
-
         if (id == 0) {
             list.add(arr);
         } else {
